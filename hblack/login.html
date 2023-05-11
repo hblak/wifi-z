@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">HBLACK Wi-Fi ZONE 
+
+</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&dispplay=swap" /> -->
+    <!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+</head>
+
+<script>
+    var error = "$(error)";
+    if ((error == "user $(username) has reached uptime limit") || (error == "kode voucher/user $(username) sudah mencapai batas waktu")) {
+        window.location.href = "./expired.html";
+    }
+</script>
+<body>
+
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+
+    <div class="container-login">
+        <div class="logo">
+            <img src="assets/shield.svg" alt="">
+        </div>
+        <div class="title">HBLACK Wi-Fi ZONE
+        </div>
+        <!-- <div class="sub-title">Guard</div> -->
+
+        <!-- options button -->
+        <div class="btn-container">
+            <button class="btn-option" onclick="voucher();">Ticket</button>
+            <button class="btn-option" onclick="member();">Membre</button>
+        </div>
+        <!-- end options button -->
+
+        <!-- box info login -->
+        <div class="box" id="infologin">
+        </div>
+        <!-- box info login -->
+
+        <form class="custom-fields" name="login" autocomplete="off" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+            <input type="hidden" name="dst" value="$(link-orig)" />
+            <input type="hidden" name="popup" value="true" />
+            <div class="username-field">
+                <input type="username" name="username" class="username-input" placeholder="username"
+                    value="$(username)" />
+            </div>
+            <div class="password-field">
+                <input name="password" placeholder="password" class="password-input" type="hidden" />
+            </div>
+            <button class="btn-submit" type="submit">Connecté</button>
+        </form>
+
+        $(if trial == 'yes')
+        <div class="link">Connexion <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Free</a></div>
+        $(endif)
+
+        $(if error)<div class="notice">$(error)</div>$(endif)
+       
+    <hr>
+        <div class="link">
+            Tél :<a href="tel:+228 99 40 30 00"> +228 99 40 30 00</a>
+        </div>
+
+        <div class="link">
+           <p>Nos tarifs</p>
+        </div>
+
+       
+
+        <!-- menu item -->
+        <div class="menu-items">
+
+            <div class="row-items">
+                <div class="title"> Heures</div>
+                <div class="title"> Validité</div>
+                <div class="title"> Prix</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> 24 Heures</div>
+                <div class="title">35 Heures</div>
+                <div class="title"> 100 fr</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> 2 Jours</div>
+                <div class="title">70 Heures</div>
+                <div class="title"> 200 fr</div>
+            </div>
+                <div class="row-items">
+                <div class="title"> 3 Jours</div>
+                <div class="title"> 75 Heures</div>
+                <div class="title"> 250 fr</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> 7 Jours</div>
+                <div class="title"> 7 Jours</div>
+                <div class="title"> 500 fr</div>
+            </div>
+            <div class="row-items">
+                <div class="title"> 1 Mois</div>
+                <div class="title">  32 Jours</div>
+                <div class="title"> 2000 fr</div>
+            </div>
+        </div>
+        <!-- menu item -->
+        <hr>
+ <!-- Scroll item -->
+ <div class="horizontal-scroll-wrapper squares">
+</div>
+<!-- End scroll item --
+   
+        <!-- footer mohon jangan di hilangkan-->
+        <div class="link">
+            <a href="https://wa.me/qr/GGDNVCSYQY6GL1">Edit by</a>HBLACK &#10084; <a href="https://wa.me/qr/GGDNVCSYQY6GL1"></a>
+        </div>
+        <!-- footer -->
+    </div>
+
+    <script type="text/javascript">
+        var hostname = window.location.hostname;
+        document.getElementById('title').innerHTML = hostname + " > login";
+
+        document.login.username.focus();
+
+        var infologin = document.getElementById('infologin');
+        infologin.innerHTML = "Tapez votre ticket pour avoir l'accès à Intenet";
+
+        // login page 2 mode by Laksamadi Guko
+        var username = document.login.username;
+        var password = document.login.password;
+
+        username.placeholder = "Code ici";
+
+        // set password = username
+        function setpass() {
+            var user = username.value
+            //user = user.toLowerCase();
+            username.value = user;
+            password.value = user;
+        }
+
+        username.onkeyup = setpass;
+
+        // change to voucher mode
+        function voucher() {
+            username.focus();
+            username.onkeyup = setpass;
+            username.placeholder = "code ici";
+            username.style = "border-radius:3px;"
+            password.type = "hidden";
+            infologin.innerHTML = "Tapez votre code";
+        }
+
+        // change to member mode
+        function member() {
+            username.focus();
+            username.onkeyup = "";
+            username.placeholder = "Username";
+            username.style = "border-radius:3px 3px 0px 0px;"
+            password.type = "password";
+            infologin.innerHTML = "Tapez votre nom d'udtilsateur et le mot de passe.";
+        }
+    </script>
+</body>
+
+</html>
